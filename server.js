@@ -27,3 +27,8 @@ io.on('connection', (socket) => { // Define um evento que é chamado quando um c
 server.listen(3000, () => {  // Inicia o servidor na porta 3000
     console.log('Servidor rodando na porta 3000');
 });
+
+// Caso alguem queira entrar no chat, é só colocar o ip da minha máquina no link , exemplo:  "192.168.249.192:3000/chat.html" 
+// Só dar um ipconfig no cmd e pegar o ip de Endereço de IPv4
+
+

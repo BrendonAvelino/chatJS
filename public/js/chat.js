@@ -4,14 +4,17 @@ const form = document.getElementById('form');
 const input = document.getElementById('input');
 const messages = document.getElementById('messages');
 
-form.addEventListener('submit', (event) => { // Adiciona um evento para o envio do formulário.
-    event.preventDefault(); // Previne o comportamento padrão de envio do formulário
-    const message = input.value;
+let username = prompt("Digite seu nome:"); // Pergunta o nome do usuário
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const message = `${username}: ${input.value}`; // Adiciona o nome do usuário à mensagem
     if (message) {
-        socket.emit('chat message', message); // Envia a mensagem para o servidor
-        input.value = ''; // Limpa o campo de entrada
+        socket.emit('chat message', message);
+        input.value = '';
     }
 });
+
 
 socket.on('chat message', (msg) => { // Adiciona um evento para receber mensagens do servidor e exibi-las.
     const item = document.createElement('div');
