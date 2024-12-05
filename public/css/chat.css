@@ -1,77 +1,132 @@
 /* Define o estilo básico da página */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Estilo para o contêiner principal do chat */
-  .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilo para o título do chat */
-  h1 {
-    text-align: center;
-    color: #444;
-  }
-  
-  /* Estilo para a área de mensagens */
-  #messages {
-    border: 1px solid #ddd;
-    padding: 15px;
-    height: 400px;
-    overflow-y: auto;
-    background: #fafafa;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  /* Estilo para as mensagens individuais */
-  #messages div {
-    padding: 8px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    background: #e9e9e9;
-  }
-  
-  /* Estilo para o formulário de envio */
-  #form {
-    display: flex;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-  
-  /* Estilo para o campo de entrada de texto */
-  #input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  /* Estilo para o botão de envio */
-  #send {
-    padding: 10px 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 10px;
-  }
-  
-  /* Estilo para o botão de envio quando está em foco */
-  #send:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #161616); /* Fundo mais escuro com leve gradiente */
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Tela cheia */
+  overflow: hidden;
+}
+
+/* Estilo para o contêiner principal do chat */
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(15, 15, 15, 0.95); /* Fundo semitransparente mais escuro */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3); /* Sombra neon reduzida */
+  border: 1px solid rgba(0, 255, 170, 0.2); /* Bordas com neon mais suave */
+}
+
+/* Estilo para o título do chat */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #00ffaa; /* Neon verde */
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #00ffaa, 0 0 8px #00ffaa; /* Sombra mais sutil */
+}
+
+/* Estilo para a área de mensagens */
+#messages {
+  border: 1px solid rgba(0, 255, 170, 0.1); /* Bordas internas com neon reduzido */
+  padding: 15px;
+  height: 400px;
+  overflow-y: auto;
+  background: rgba(5, 5, 5, 0.9); /* Fundo ainda mais escuro para contraste */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 255, 170, 0.2); /* Sombra neon interna reduzida */
+}
+
+/* Estilo para as mensagens individuais */
+#messages div {
+  word-wrap: break-word;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.9); /* Fundo semitransparente mais escuro */
+  color: #ffffff; /* Cor do texto */
+  font-size: 14px;
+  line-height: 1.5;
+  text-shadow: 0 0 2px #00ffaa; /* Neon no texto reduzido */
+}
+
+/* Estilo para o formulário de envio */
+#form {
+  display: flex;
+  border-top: 1px solid rgba(0, 255, 170, 0.1);
+  padding-top: 10px;
+}
+
+/* Estilo para o campo de entrada do nome */
+#inputName {
+  padding: 10px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 255, 170, 0.3); /* Neon suave */
+  border-radius: 4px;
+  font-size: 16px;
+  background: rgba(25, 25, 25, 0.9);
+  color: #00ffaa;
+  text-shadow: 0 0 3px #00ffaa; /* Redução no neon */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para o campo de entrada ao focar */
+#inputName:focus,
+#inputMsg:focus {
+  outline: none;
+  border: 1px solid #00ffaa;
+  box-shadow: 0 0 8px #00ffaa; /* Neon reduzido */
+}
+
+/* Estilo para o campo de entrada de texto */
+#inputMsg {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid rgba(0, 255, 170, 0.3); /* Neon suave */
+  border-radius: 4px;
+  font-size: 16px;
+  background: rgba(25, 25, 25, 0.9);
+  color: #00ffaa;
+  text-shadow: 0 0 3px #00ffaa; /* Neon no texto reduzido */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para o botão de envio */
+#send {
+  padding: 10px 15px;
+  border: none;
+  background: linear-gradient(135deg, #00ffaa, #0088cc);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Roboto', Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 2px #ffffff, 0 0 5px #00ffaa; /* Neon sutil */
+}
+
+/* Efeito hover para o botão */
+#send:hover {
+  background: linear-gradient(135deg, #00ffaa, #00ccff);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00ffaa, 0 0 15px #00ccff; /* Sombra reduzida */
+}
+
+/* Estilo ao clicar no botão */
+#send:active {
+  transform: scale(0.95);
+  background: linear-gradient(135deg, #0088cc, #00ffaa);
+}
